@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     std::ifstream file(argv[1], std::ios::binary | std::ios::ate);
     // Note: tellg() works only for binary files, not text files
     std::streamsize size = file.tellg(); 
-    printf("Size (in bytes): %lld\n", size);
+    printf("Size (in bytes): %ld\n", size);
 
     file.seekg(0, std::ios::beg);
     
@@ -119,7 +119,7 @@ int main(int argc, char *argv[]) {
             // printf("%f\n", diff);
 
             char title[256];
-            sprintf_s(title, "MiniGB - %f fps", (frames / diff));
+            sprintf_l(title, "MiniGB - %f fps", (frames / diff));
             SDL_SetWindowTitle(window, title);
 
             fpsEvalTimer += 1;
