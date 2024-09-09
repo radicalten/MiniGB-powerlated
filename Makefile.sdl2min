@@ -1,9 +1,10 @@
 CC      := gcc
 CFLAGS  := -g++ -O3 -Wall
+CXXFLAGS := $(CFLAGS)
 LDFLAGS := -I/opt/homebrew/include/SDL2 -L/opt/homebrew/lib -Wl,-rpath,/opt/homebrew/lib -lSDL2
 TARGET  := myapp
 SRCS    := $(wildcard *.cpp)
 OBJS    := $(patsubst %.cpp,%.o,$(SRCS))
 # Make requires <tab> to separate 
 all: $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(LDFLAGS) -o $(TARGET)
+	$(CC) $(OBJS) $(CFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $(TARGET)
