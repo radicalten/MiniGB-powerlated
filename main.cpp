@@ -119,7 +119,7 @@ int main(int argc, char *argv[]) {
             // printf("%f\n", diff);
 
             char title[256];
-            sprintf_l(title, "MiniGB - %f fps", (frames / diff));
+  //          sprintf_l(title, "MiniGB - %f fps", (frames / diff));
             SDL_SetWindowTitle(window, title);
 
             fpsEvalTimer += 1;
